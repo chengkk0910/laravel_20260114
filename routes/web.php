@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/git', function () {
+    dd('git ok');
+});
+
 Route::get('/calculator/{num1}/{num2}', function (string $num1, string $num2) {
     // dd($num);
 
