@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarController;
+
+Route::get('/car', [CarController::class, 'index']);
+
+
 
 Route::get('/git', function () {
     dd('git ok');
