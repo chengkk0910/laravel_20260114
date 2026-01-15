@@ -12,14 +12,26 @@ class DogController extends Controller
     public function index()
     {
         $data = [
-            ['id' => 1, 'name' => 'amy', 'age' => 3],
-            ['id' => 2, 'name' => 'bob', 'age' => 5],
-            ['id' => 3, 'name' => 'cat', 'age' => 2],
+            [
+                'id' => 1,
+                'name' => 'amy',
+                'mobile' => '0911'
+            ],
+            [
+                'id' => 2,
+                'name' => 'bob',
+                'mobile' => '0922'
+            ],
+            [
+                'id' => 3,
+                'name' => 'cat',
+                'mobile' => '0933'
+            ],
         ];
-        // dd($data);
+        dd($data);
         // dd('Dog index ok 123');
-        // return view('dog.index')->with('data', $data);
-        return view('dog.index', ['data' => $data]);
+        return view('dog.index')->with('data', $data);
+        // return view('dog.index', ['data' => $data]);
     }
 
     /**
