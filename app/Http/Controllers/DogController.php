@@ -11,8 +11,15 @@ class DogController extends Controller
      */
     public function index()
     {
+        $data = [
+            ['id' => 1, 'name' => 'amy', 'age' => 3],
+            ['id' => 2, 'name' => 'bob', 'age' => 5],
+            ['id' => 3, 'name' => 'cat', 'age' => 2],
+        ];
+        // dd($data);
         // dd('Dog index ok 123');
-        return view('dog.index');
+        // return view('dog.index')->with('data', $data);
+        return view('dog.index', ['data' => $data]);
     }
 
     /**
@@ -78,5 +85,4 @@ class DogController extends Controller
     {
         return view('dog.f3');
     }
-    
 }

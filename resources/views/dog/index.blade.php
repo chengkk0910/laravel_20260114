@@ -16,6 +16,12 @@
     // $url = route('dogs.f1');
     // dd($url);
     ?>
+    @php
+        // $url = route('dogs.f1');
+        // dd($url);
+        dd($data);
+
+    @endphp
 </body>
 
 </html>
