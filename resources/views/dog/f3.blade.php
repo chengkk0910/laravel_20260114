@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <a href="{{ route('dogs.index') }}">回到首頁</a>
     Hello F3 View
 </body>
 
