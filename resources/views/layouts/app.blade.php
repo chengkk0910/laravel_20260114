@@ -5,8 +5,10 @@
 </head>
 
 <body>
+
+    no parent layout text <br>
     @section('sidebar')
-        This is the master sidebar.
+        master sidebar MMMM <br>
     @show
 
     <div class="container">
