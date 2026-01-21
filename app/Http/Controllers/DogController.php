@@ -118,4 +118,19 @@ class DogController extends Controller
     {
         return view('dog.blue.b3');
     }
+
+     public function r1()
+    {
+        return view('dog.red.r1');
+    }
+
+     public function r2()
+    {
+        return view('dog.red.r2');
+    }
+
+     public function r3()
+    {
+        return view('dog.red.r3');
+    }
 }
