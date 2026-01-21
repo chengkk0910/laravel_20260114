@@ -133,4 +133,9 @@ class DogController extends Controller
     {
         return view('dog.red.r3');
     }
+
+    public function all()
+    {
+        return view('dog.all');
+    }
 }
