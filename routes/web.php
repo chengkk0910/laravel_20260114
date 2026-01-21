@@ -6,12 +6,13 @@ use App\Http\Controllers\DogController;
 
 
 // Dog Controller
+Route::get('/dogs_child', [DogController::class, 'child'])->name('dogs.child');
 Route::get('/dogs_1f', [DogController::class, 'f1'])->name('dogs.f1');
 Route::get('/dogs_2f', [DogController::class, 'f2'])->name('dogs.f2');
 Route::get('/dogs_3f', [DogController::class, 'f3'])->name('dogs.f3');
 Route::resource('dogs', DogController::class);
 
-
+// Car Controller
 Route::get('/cars', [CarController::class, 'index']);
 Route::get('/cars_hello', [CarController::class, 'hello']);
 

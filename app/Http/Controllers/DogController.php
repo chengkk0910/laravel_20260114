@@ -97,4 +97,10 @@ class DogController extends Controller
     {
         return view('dog.f3');
     }
+
+    public function child()
+    {
+        // dd('dog child ok dog controller');
+        return view('child');
+    }
 }
