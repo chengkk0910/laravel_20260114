@@ -103,4 +103,9 @@ class DogController extends Controller
         // dd('dog child ok dog controller');
         return view('child');
     }
+
+    public function blue()
+    {
+        return view('dog.blue.blue');
+    }
 }
