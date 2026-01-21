@@ -11,8 +11,8 @@ class BlueController extends Controller
      */
     public function index()
     {
-        dd('Blue index controller ok');
-        // return view('blue.index');
+        // dd('Blue index controller ok');
+        return view('blue.index');
     }
 
     /**
