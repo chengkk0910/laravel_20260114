@@ -1,9 +1,9 @@
 @extends('layouts.blue')
 
-@section('title', 'B1 Title')
+@section('title', 'B3 Title')
 
 
 
 @section('content')
-    <p>Hello B1</p>
+    <p>Hello B3</p>
 @endsection

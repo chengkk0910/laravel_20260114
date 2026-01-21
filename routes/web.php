@@ -7,6 +7,8 @@ use App\Http\Controllers\DogController;
 
 // Dog Controller
 Route::get('/dogs_b1', [DogController::class, 'b1'])->name('dogs.b1');
+Route::get('/dogs_b2', [DogController::class, 'b2'])->name('dogs.b2');
+Route::get('/dogs_b3', [DogController::class, 'b3'])->name('dogs.b3');
 Route::get('/dogs_child', [DogController::class, 'child'])->name('dogs.child');
 Route::get('/dogs_1f', [DogController::class, 'f1'])->name('dogs.f1');
 Route::get('/dogs_2f', [DogController::class, 'f2'])->name('dogs.f2');
