@@ -4,7 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\DogController;
 use App\Http\Controllers\BlueController;
+use App\Http\Controllers\RedController;
 
+
+// Red Controller
+Route::resource('/reds', RedController::class);
 
 // Blue Controller
 Route::resource('/blues', BlueController::class);

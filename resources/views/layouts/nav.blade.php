@@ -20,10 +20,10 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Blue</a>
+                        <a class="nav-link" href="{{route('blues.index')}}">Blue</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Red</a>
+                        <a class="nav-link" href="{{route('reds.index')}}">Red</a>
                     </li>
                     {{-- <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>

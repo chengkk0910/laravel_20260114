@@ -11,7 +11,8 @@ class RedController extends Controller
      */
     public function index()
     {
-        //
+        // dd('Red index controller ok');
+        return view('red.index');
     }
 
     /**
