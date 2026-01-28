@@ -14,13 +14,14 @@ class CarController extends Controller
         // $sql = 'SELECT * FROM `students` WHERE `name` = \'amy\'';
         // $data = DB::select($sql);；
         // $data = DB::table('students')->get();
+        // $data = DB::table('students')->where('name', 'amy')->toSql();
         $data = DB::table('students')->where('name', 'amy')->first();
         // $data = DB::table('students')->where('name', 'amy')->get();
         // $data = DB::table('students')->first();
         // get() php fetch all rows  , foreach loop
         // first() php fetch one row , 
 
-        dd($data);
+        // dd($data);
 
         // data['key']
         // data->key
