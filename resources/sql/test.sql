@@ -9,4 +9,11 @@ INSERT INTO
     `students` (`id`, `name`, `mobile`)
 VALUES
     (NULL, 'amy', '0911'),
-    (NULL, 'bob', '0922')
+    (NULL, 'bob', '0922');
+
+SELECT
+    *
+FROM
+    `students`
+WHERE
+    `name` = 'amy';

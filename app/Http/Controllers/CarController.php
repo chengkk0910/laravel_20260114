@@ -11,9 +11,24 @@ class CarController extends Controller
     {
 
         // dd('Car Controller Index Method');
-        $data = DB::select('select * from students');
+        // $sql = 'SELECT * FROM `students` WHERE `name` = \'amy\'';
+        // $data = DB::select($sql);；
         // $data = DB::table('students')->get();
-        // dd($data);
+        $data = DB::table('students')->where('name', 'amy')->first();
+        // $data = DB::table('students')->where('name', 'amy')->get();
+        // $data = DB::table('students')->first();
+        // get() php fetch all rows  , foreach loop
+        // first() php fetch one row , 
+
+        dd($data);
+
+        // data['key']
+        // data->key
+        // data.key
+
+        // data['key']()
+        // data->key()
+        // data.key()
 
         // foreach ($data as $key => $value) {
         //     echo 'ID: ' . $value->id . ' Name: ' . $value->name . ' Mobile: ' . $value->mobile . '<br>';
