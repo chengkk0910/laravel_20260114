@@ -15,11 +15,11 @@ class CarController extends Controller
         // $data = DB::table('students')->get();
         // dd($data);
 
-        foreach ($data as $key => $value) {
-            echo 'ID: ' . $value->id . ' Name: ' . $value->name . ' Mobile: ' . $value->mobile . '<br>';
-        }
+        // foreach ($data as $key => $value) {
+        //     echo 'ID: ' . $value->id . ' Name: ' . $value->name . ' Mobile: ' . $value->mobile . '<br>';
+        // }
         // dd('hello car controller index');
-        // return view('car.index')->with('data', $data);
+        return view('car.index')->with('data', $data);
         // return 'This is Car Controller';
     }
 

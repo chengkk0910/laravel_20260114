@@ -10,6 +10,10 @@
 
 <body>
     Hello Car Index View
+
+    @php
+        dd($data);
+    @endphp
 </body>
 
 </html>
