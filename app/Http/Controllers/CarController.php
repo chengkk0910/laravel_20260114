@@ -4,18 +4,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Cat;
+	
+	
 
 class CarController extends Controller
 {
     public function index()
     {
+        // get()  all()
+        //  $data = Cat::all();
+        //  $data = Cat::where('name', 'apple')->get();
+         $data = Cat::where('name', 'apple')->get();
+         dd($data);
+
 
         // dd('Car Controller Index Method');
         // $sql = 'SELECT * FROM `students` WHERE `name` = \'amy\'';
         // $data = DB::select($sql);；
         // $data = DB::table('students')->get();
         // $data = DB::table('students')->where('name', 'amy')->toSql();
-        $data = DB::table('students')->where('name', 'amy')->first();
+        // $data = DB::table('students')->where('name', 'amy')->first();
         // $data = DB::table('students')->where('name', 'amy')->get();
         // $data = DB::table('students')->first();
         // get() php fetch all rows  , foreach loop
