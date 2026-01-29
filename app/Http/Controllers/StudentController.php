@@ -33,17 +33,17 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        // $input = $request->all();
 
-        // array:2 [▼ // app\Http\Controllers\StudentController.php:38
-        // "email" => "kai"
-        // "mobile_" => "0944"
-        // ]
-        
         $input = $request->except('_token');
-        dd($input);
+        // dd($input);
 
-        // dd('Student store method');
+        $data = new Student();
+        $data->name= $input['name'];
+        $data->mobile= $input['mobile'];
+        $data->save();
+
+        return redirect()->route('students.index');
+
     }
 
     /**
