@@ -20,7 +20,7 @@
         <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
 
         <div class="text-end mb-3">
-            <a href="#" class="btn btn-success">新增</a>
+            <a href="{{ route('students.create') }}" class="btn btn-success">新增</a>
         </div>
         <table class="table">
             <thead>
