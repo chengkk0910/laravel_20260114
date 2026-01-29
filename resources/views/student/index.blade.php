@@ -28,6 +28,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Mobile</th>
+                    <th>opt</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,6 +37,15 @@
                         <td>{{ $value->id }}</td>
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->mobile }}</td>
+                        <td>
+
+                            @php
+                            // $url = route('students.edit',  ['student' => $value->id]);
+                            // dd($url);
+                            @endphp
+                            {{-- <a href="{{ route('students.edit', $value->id) }}" class="btn btn-warning">修改</a> --}}
+                            <a href="{{ route('students.edit', ['student' => $value->id]) }}" class="btn btn-warning">修改</a>
+                        </td>
                     </tr>
                 @endforeach
 
