@@ -5,7 +5,10 @@ use App\Http\Controllers\CarController;
 use App\Http\Controllers\DogController;
 use App\Http\Controllers\BlueController;
 use App\Http\Controllers\RedController;
+use App\Http\Controllers\StudentController;
 
+// Student Controller
+Route::resource('students', StudentController::class);
 
 // Red Controller
 Route::resource('/reds', RedController::class);
