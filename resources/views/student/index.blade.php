@@ -13,11 +13,15 @@
 
 
     <div class="container mt-3">
-        <h2>Basic Table</h2>
+        <h2>學生資料總表</h2>
         @php
             // dd($data);
         @endphp
         <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
+
+        <div class="text-end mb-3">
+            <a href="#" class="btn btn-success">新增</a>
+        </div>
         <table class="table">
             <thead>
                 <tr>

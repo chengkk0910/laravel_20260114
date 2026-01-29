@@ -13,23 +13,9 @@ class StudentController extends Controller
     public function index()
     {
 
-        // DB::table('students')->insert([
-        //     'name' => 'test123',
-        //     'mobile' => 'testmobile'
-        // ]);
-        // dd('test ok');
-        // $data  = Student::all();
         $data  = Student::get();
-
-        // $data = [
-        //     'data' => $result,
-        //     'test' =>'This is test message',
-        // ];
-
-        // dd($data['test']);
         // dd($data);
-        // dd('student controller index ok');
-        // return view('student.index')->with('data', $data);
+
         return view('student.index')->with('data', $data);
     }
 
