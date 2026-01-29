@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
-
+use Illuminate\Support\Facades\DB;
 class StudentController extends Controller
 {
     /**
@@ -12,6 +12,12 @@ class StudentController extends Controller
      */
     public function index()
     {
+
+        // DB::table('students')->insert([
+        //     'name' => 'test123',
+        //     'mobile' => 'testmobile'
+        // ]);
+        // dd('test ok');
         // $data  = Student::all();
         $data  = Student::get();
 
