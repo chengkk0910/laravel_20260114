@@ -13,7 +13,8 @@
 
     <div class="container mt-3">
         <h2>Student create form</h2>
-        <form action="/action_page.php">
+        <form action="{{ route('students.store') }}" method="POST">
+            @csrf
             <div class="mb-3 mt-3">
                 <label for="name" class="form-label">Name:</label>
                 <input type="name" class="form-control" id="name" placeholder="Enter name" name="email">
