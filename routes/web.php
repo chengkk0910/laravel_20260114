@@ -7,6 +7,12 @@ use App\Http\Controllers\BlueController;
 use App\Http\Controllers\RedController;
 use App\Http\Controllers\StudentController;
 
+// /
+Route::get('/', function () {
+    // dd('////');
+    return redirect()->route('students.index');
+});
+
 // Student Controller
 Route::resource('students', StudentController::class);
 
@@ -84,16 +90,16 @@ Route::get('/user/{id}', function (string $id) {
     return 'User ' . $id;
 });
 
-Route::get('/', function () {
-    // dump 繼續
-    // dd 停止
-    $name = 'kai';
-    dump($name);
-    $mobile = '090-1234-5678';
-    $text = "$name - $mobile";
-    dd($text);
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     // dump 繼續
+//     // dd 停止
+//     $name = 'kai';
+//     dump($name);
+//     $mobile = '090-1234-5678';
+//     $text = "$name - $mobile";
+//     dd($text);
+//     return view('welcome');
+// });
 
 Route::get('/home0114', function () {
     return view('home0114');

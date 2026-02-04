@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use Illuminate\Support\Facades\DB;
+
 class StudentController extends Controller
 {
     /**
@@ -38,12 +39,11 @@ class StudentController extends Controller
         // dd($input);
 
         $data = new Student();
-        $data->name= $input['name'];
-        $data->mobile= $input['mobile'];
+        $data->name = $input['name'];
+        $data->mobile = $input['mobile'];
         $data->save();
 
         return redirect()->route('students.index');
-
     }
 
     /**
@@ -77,20 +77,22 @@ class StudentController extends Controller
         $input = $request->except('_token', '_method');
         // dd($input);
         $data = Student::where('id', $id)->first();
-        $data->name= $input['name'];
-        $data->mobile= $input['mobile'];
+        $data->name = $input['name'];
+        $data->mobile = $input['mobile'];
         $data->save();
 
         return redirect()->route('students.index');
-
-
     }
-
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
+        // dd('Student destroy method ' . $id);
+        // $student = Student::find($id);
+        $data = Student::where('id', $id)->first();
+        $data->delete();
+
+        return redirect()->route('students.index');
     }
 }

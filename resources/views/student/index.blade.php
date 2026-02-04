@@ -40,11 +40,20 @@
                         <td>
 
                             @php
-                            // $url = route('students.edit',  ['student' => $value->id]);
-                            // dd($url);
+                                // $url = route('students.edit',  ['student' => $value->id]);
+                                // dd($url);
                             @endphp
                             {{-- <a href="{{ route('students.edit', $value->id) }}" class="btn btn-warning">修改</a> --}}
-                            <a href="{{ route('students.edit', ['student' => $value->id]) }}" class="btn btn-warning">修改</a>
+
+                            <form action="{{ route('students.destroy', ['student' => $value->id]) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <a href="{{ route('students.edit', ['student' => $value->id]) }}"
+                                    class="btn btn-warning">修改</a>
+                                <button type="submit" class="btn btn-danger">刪除</button>
+                            </form>
+
+                            {{-- <a href="{{ route('students.destroy', ['student' => $value->id]) }}" class="btn btn-danger">刪除</a> --}}
                         </td>
                     </tr>
                 @endforeach
