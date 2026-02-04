@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\Phone;
 use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
@@ -39,11 +40,18 @@ class StudentController extends Controller
         $input = $request->except('_token');
         // dd($input);
 
+        // studnets
         $data = new Student();
         $data->name = $input['name'];
         $data->mobile = $input['mobile'];
         $data->save();
 
+        // phones
+        $dataPhone = new Phone();
+        $dataPhone->name = $input['phone'];
+        $dataPhone->student_id = $data->id;
+        $dataPhone->save();
+            
         return redirect()->route('students.index');
     }
 
