@@ -51,7 +51,7 @@ class StudentController extends Controller
         $dataPhone->name = $input['phone'];
         $dataPhone->student_id = $data->id;
         $dataPhone->save();
-            
+
         return redirect()->route('students.index');
     }
 
@@ -69,7 +69,7 @@ class StudentController extends Controller
     public function edit(string $id)
     {
         // $data = Student::find($id);
-        $data = Student::where('id', $id)->first();
+        $data = Student::where('id', $id)->with('phone')->first();
         // dd($data);
 
         // dd('Student edit method '.$id);
@@ -85,10 +85,21 @@ class StudentController extends Controller
         // $input = $request->all( );
         $input = $request->except('_token', '_method');
         // dd($input);
+
+        // students
         $data = Student::where('id', $id)->first();
         $data->name = $input['name'];
         $data->mobile = $input['mobile'];
         $data->save();
+
+        // 刪除子表
+        Phone::where('student_id', $id)->delete();
+
+        // phones
+        $dataPhone = new Phone();
+        $dataPhone->name = $input['phone'];
+        $dataPhone->student_id = $data->id;
+        $dataPhone->save();
 
         return redirect()->route('students.index');
     }
@@ -101,6 +112,9 @@ class StudentController extends Controller
         // $student = Student::find($id);
         $data = Student::where('id', $id)->first();
         $data->delete();
+
+        // 刪除子表
+        Phone::where('student_id', $id)->delete();
 
         return redirect()->route('students.index');
     }

@@ -27,6 +27,10 @@
             <div class="mb-3 mt-3">
                 <label for="mobile" class="form-label">Mobile:</label>
                 <input type="text" class="form-control" id="mobile" placeholder="Enter mobile" name="mobile" value="{{$data->mobile}}">
+            </div>           
+            <div class="mb-3 mt-3">
+                <label for="phone" class="form-label">Phone:</label>
+                <input type="text" class="form-control" id="phone" placeholder="Enter phone" name="phone" value="{{$data->phone->name ?? ''}}">
             </div>
            
             <button type="submit" class="btn btn-primary">Submit</button>
