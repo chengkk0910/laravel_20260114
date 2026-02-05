@@ -17,7 +17,7 @@ class StudentController extends Controller
 
         $data  = Student::with('phone')->get();
         // dd($data[0]->phone->name);
-        // dd($data);
+        // dd($data); 
 
         return view('student.index')->with('data', $data);
     }
@@ -110,6 +110,7 @@ class StudentController extends Controller
     {
         // dd('Student destroy method ' . $id);
         // $student = Student::find($id);
+        // 刪除主表
         $data = Student::where('id', $id)->first();
         $data->delete();
 

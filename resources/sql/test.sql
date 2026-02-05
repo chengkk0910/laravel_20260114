@@ -57,3 +57,14 @@ FROM
     `students`
 
 INNER JOIN `phones` ON `students`.`id` = `phones`.`student_id`;
+
+
+SELECT
+    `students`.`id`,
+    `students`.`name`,
+    `students`.`mobile`,
+    `hobbies`.`name`
+FROM
+    `students`
+
+INNER JOIN `hobbies` ON `students`.`id` = `hobbies`.`student_id`;
