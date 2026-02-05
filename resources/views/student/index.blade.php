@@ -42,6 +42,9 @@
                         <td>{{ $value->phone->name ?? '' }}</td>
                         <td>
                             @foreach ($value->hobbies as $key => $item)
+                                @if (empty($item->name))
+                                    @break
+                                @endif
                                 {{ $key + 1 . '.' . $item->name ?? '' }}<br>
                             @endforeach
                         </td>
