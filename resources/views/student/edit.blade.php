@@ -15,24 +15,34 @@
         <h2>Student edit form , id = {{ $data->id }}</h2>
 
         @php
-        // dd($data);
+            // dd($data);
         @endphp
         <form action="{{ route('students.update', $data->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="mb-3 mt-3">
                 <label for="name" class="form-label">Name:</label>
-                <input type="name" class="form-control" id="name" placeholder="Enter name" name="name" value="{{$data->name}}">
+                <input type="name" class="form-control" id="name" placeholder="Enter name" name="name"
+                    value="{{ $data->name }}">
             </div>
             <div class="mb-3 mt-3">
                 <label for="mobile" class="form-label">Mobile:</label>
-                <input type="text" class="form-control" id="mobile" placeholder="Enter mobile" name="mobile" value="{{$data->mobile}}">
-            </div>           
+                <input type="text" class="form-control" id="mobile" placeholder="Enter mobile" name="mobile"
+                    value="{{ $data->mobile }}">
+            </div>
             <div class="mb-3 mt-3">
                 <label for="phone" class="form-label">Phone:</label>
-                <input type="text" class="form-control" id="phone" placeholder="Enter phone" name="phone" value="{{$data->phone->name ?? ''}}">
+                <input type="text" class="form-control" id="phone" placeholder="Enter phone" name="phone"
+                    value="{{ $data->phone->name ?? '' }}">
             </div>
-           
+            <div class="mb-3 mt-3">
+                <label for="hobbies" class="form-label">Hobbies: (ex:html,css,js)</label>
+                <input type="text" class="form-control" id="hobbies" placeholder="Enter hobbies" name="hobbies"
+                    value="{{ $data->hobbies_list ?? '' }}">
+            </div>
+
+
+
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>

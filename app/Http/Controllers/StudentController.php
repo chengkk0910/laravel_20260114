@@ -51,10 +51,12 @@ class StudentController extends Controller
         $data->save();
 
         // phones
-        $dataPhone = new Phone();
-        $dataPhone->name = $input['phone'];
-        $dataPhone->student_id = $data->id;
-        $dataPhone->save();
+        if (!empty($input['phone'])) {
+            $dataPhone = new Phone();
+            $dataPhone->name = $input['phone'];
+            $dataPhone->student_id = $data->id;
+            $dataPhone->save();
+        }
 
         // hobbies
         if (!empty($hobbies)) {
@@ -83,8 +85,22 @@ class StudentController extends Controller
     public function edit(string $id)
     {
         // $data = Student::find($id);
-        $data = Student::where('id', $id)->with('phone')->first();
+        $data = Student::where('id', $id)->with('phone')->with('hobbies')->first();
+        // dd($data->hobbies);
+        $tmpArr = [];
+        foreach ($data->hobbies as $key => $value) {
+            $tmpArr[] = $value->name;
+        };
+
+        if (!empty($tmpArr)) {
+            $data['hobbies_list'] = implode(",", $tmpArr);
+        } else {
+            $data['hobbies_list'] = '';
+        }
+
         // dd($data);
+
+
 
         // dd('Student edit method '.$id);
         return view('student.edit')->with('data', $data);
@@ -108,12 +124,27 @@ class StudentController extends Controller
 
         // 刪除子表
         Phone::where('student_id', $id)->delete();
+        Hobby::where('student_id', $id)->delete();
 
         // phones
-        $dataPhone = new Phone();
-        $dataPhone->name = $input['phone'];
-        $dataPhone->student_id = $data->id;
-        $dataPhone->save();
+        if (!empty($input['phone'])) {
+            $dataPhone = new Phone();
+            $dataPhone->name = $input['phone'];
+            $dataPhone->student_id = $data->id;
+            $dataPhone->save();
+        }
+
+        // hobbies
+        $hobbies = explode(',', $input['hobbies']);
+        if (!empty($hobbies)) {
+            foreach ($hobbies as $key => $value) {
+                $dataHobby = new Hobby();
+                $dataHobby->name = $value;
+                $dataHobby->student_id = $data->id;
+                $dataHobby->save();
+            }
+        }
+
 
         return redirect()->route('students.index');
     }
@@ -124,12 +155,16 @@ class StudentController extends Controller
     {
         // dd('Student destroy method ' . $id);
         // $student = Student::find($id);
+
+        // 刪除子表
+        Phone::where('student_id', $id)->delete();
+        Hobby::where('student_id', $id)->delete();
+
         // 刪除主表
         $data = Student::where('id', $id)->first();
         $data->delete();
 
-        // 刪除子表
-        Phone::where('student_id', $id)->delete();
+
 
         return redirect()->route('students.index');
     }

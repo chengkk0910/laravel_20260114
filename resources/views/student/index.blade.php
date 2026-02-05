@@ -41,8 +41,8 @@
                         <td>{{ $value->mobile ?? '' }}</td>
                         <td>{{ $value->phone->name ?? '' }}</td>
                         <td>
-                            @foreach ($value->hobbies as  $key => $item)
-                                {{ $key+1 }}: {{ $item->name ?? '' }}<br>
+                            @foreach ($value->hobbies as $key => $item)
+                                {{ $key + 1 . '.' . $item->name ?? '' }}<br>
                             @endforeach
                         </td>
                         <td>
