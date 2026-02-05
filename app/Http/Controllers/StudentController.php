@@ -15,8 +15,9 @@ class StudentController extends Controller
     public function index()
     {
 
-        $data  = Student::with('phone')->get();
+        $data  = Student::with('phone')->with('hobbies')->get();
         // dd($data[0]->phone->name);
+        // dd($data[0]->hobbies);
         // dd($data); 
 
         return view('student.index')->with('data', $data);

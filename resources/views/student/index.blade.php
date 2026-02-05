@@ -29,6 +29,7 @@
                     <th>Name</th>
                     <th>Mobile</th>
                     <th>Phone</th>
+                    <th>Hobbies</th>
                     <th>opt</th>
                 </tr>
             </thead>
@@ -39,6 +40,11 @@
                         <td>{{ $value->name ?? '' }}</td>
                         <td>{{ $value->mobile ?? '' }}</td>
                         <td>{{ $value->phone->name ?? '' }}</td>
+                        <td>
+                            @foreach ($value->hobbies as  $key => $item)
+                                {{ $key+1 }}: {{ $item->name ?? '' }}<br>
+                            @endforeach
+                        </td>
                         <td>
 
                             @php
