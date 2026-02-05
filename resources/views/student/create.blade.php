@@ -27,6 +27,11 @@
                 <label for="phone" class="form-label">Phone:</label>
                 <input type="text" class="form-control" id="phone" placeholder="Enter phone" name="phone">
             </div>
+            <div class="mb-3 mt-3">
+                <label for="hobbies" class="form-label">Hobbies: (ex:html,css,js)</label>
+                <input type="text" class="form-control" id="hobbies" placeholder="Enter hobbies" name="hobbies">
+            </div>
+
 
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

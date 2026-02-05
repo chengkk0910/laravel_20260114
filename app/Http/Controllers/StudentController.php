@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\Phone;
+use App\Models\Hobby;
 use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
@@ -39,6 +40,8 @@ class StudentController extends Controller
     {
 
         $input = $request->except('_token');
+        $hobbies = explode(',', $input['hobbies']);
+        // dd($hobbies);
         // dd($input);
 
         // studnets
@@ -52,6 +55,16 @@ class StudentController extends Controller
         $dataPhone->name = $input['phone'];
         $dataPhone->student_id = $data->id;
         $dataPhone->save();
+
+        // hobbies
+        if (!empty($hobbies)) {
+            foreach ($hobbies as $key => $value) {
+                $dataHobby = new Hobby();
+                $dataHobby->name = $value;
+                $dataHobby->student_id = $data->id;
+                $dataHobby->save();
+            }
+        }
 
         return redirect()->route('students.index');
     }
